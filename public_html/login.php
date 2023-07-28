@@ -9,35 +9,42 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">BELLAGAMES</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav"> 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Catálogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre nosotros</a>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">BELLAGAMES</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav"> 
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre nosotros</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
     <?php
-    $rellenar= "Por favor, completa todos los campos para poder registrarte.";
-    //declaracion de variables no es recomendable porque si las declaro no tienen valor asignado, lo que significa que siempre pasarán la condicion de '!empty' y se le asignará null
-    var_dump($_FILES);
-    $imagen_subida = null;
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["nombre"]) && !empty($_POST["apellidos"]) && !empty($_POST["email"]) && !empty($_POST["telefono"]) && !empty($_FILES["imagen"]) && $_FILES["imagen"]["error"]===0) {
+        include("defines.php");
+         //declaracion de variables no es recomendable porque si las declaro no tienen valor asignado, lo que significa que siempre pasarán la condicion de '!empty' y se le asignará null
+        $imagen_subida = null;
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["nombre"]) && !empty($_POST["apellidos"]) && !empty($_POST["telefono"]) && !empty($_POST["email"]) && !empty($_FILES["imagen"]) && $_FILES["imagen"]["error"] === 0) {
             
+        $form_data = array(
+            "nombre" => $_POST["nombre"],
+            "apellidos" => $_POST["apellidos"],
+            "email" => $_POST["email"],
+            "telefono" => $_POST["telefono"],
+            "imagen" => $imagen_subida
+        );
+    
         $imagen_nombre = $_FILES["imagen"]["name"];
         $imagen_tipo = $_FILES["imagen"]["type"];
     
@@ -60,23 +67,34 @@
             // Si el formato o tamaño no es válido, muestra un mensaje de error
             echo "Error: Solo se permiten imágenes en formato JPG, PNG o SVG.";
         }
-        ?>
+    ?>
         
         <div class="container-md mt-5">
-            <ul class="list-group">
-                <li class="list-group-item">Graciass <?=($_POST["nombre"]&& $_POST["apellidos"])?></p>
-                <li class="list-group-item">tu email es <?=($_POST["email"])?></p>
-                <li class="list-group-item">Has sido registrado con el número  <?=($_POST["telefono"])?></p>
-                <?php if ($imagen_subida): ?> 
-                    <li class="list-group-item">has subido la siguiente imagen</p>
-                    <img src="<?=$imagen_subida?>" class="card-img-top" style="width: 100%;max-width:400px">
-                <?php endif; ?> 
-
-            </ul>
+        <ul class="list-group">
+            <li class="list-group-item">Graciass <?=($_POST["nombre"]&& $_POST["apellidos"])?></p>
+            <li class="list-group-item">tu email es <?=($_POST["email"])?></p>
+            <li class="list-group-item">Has sido registrado con el número  <?=($_POST["telefono"])?></p>
+            <?php if ($imagen_subida): ?> 
+                <li class="list-group-item">has subido la siguiente imagen</p>
+                <img src="<?=$imagen_subida?>" class="card-img-top" style="width: 100%;max-width:400px">
+            <?php endif; 
             
-            <a type="button" class="btn btn-primary mt-3" href="/login.php">volver</a>
+        
+            ?> 
+                <li class="list-group-item">has subido el siguiente json
+                <?php
+            // Convert the array to JSON format
+            $json_data = json_encode($form_data['nombre']);
+            // Save the JSON data to a file (e.g., data.json)
             
-        </div>
+            echo $json_data;
+            ?>
+                </p>
+        </ul>
+        
+        <a type="button" class="btn btn-primary mt-3" href="/login.php">volver</a>
+        
+    </div>
     <?php
     } else { 
     ?>
