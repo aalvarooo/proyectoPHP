@@ -17,11 +17,11 @@
 
                 <a class="nav-item nav-link active" href="" aria-current="page">Administrador</a>
                 <a class="nav-item nav-link active" href="<?php echo $url_base;?>secciones/servicios" aria-current="page">Servicios</a>
-                <a class="nav-item nav-link active" href="#" aria-current="page">Portafolio</a>
-                <a class="nav-item nav-link active" href="#" aria-current="page">Entradas</a>
-                <a class="nav-item nav-link active" href="#" aria-current="page">Equipo</a>
-                <a class="nav-item nav-link active" href="#" aria-current="page">Configuraciones</a>
-                <a class="nav-item nav-link active" href="#" aria-current="page">Usuarios</a>
+                <a class="nav-item nav-link active" href="<?php echo $url_base;?>secciones/portafolio" aria-current="page">Portafolio</a>
+                <a class="nav-item nav-link active" href="<?php echo $url_base;?>secciones/entradas" aria-current="page">Entradas</a>
+                <a class="nav-item nav-link active" href="<?php echo $url_base;?>secciones/equipo" aria-current="page">Equipo</a>
+                <a class="nav-item nav-link active" href="<?php echo $url_base;?>secciones/configuracion" aria-current="page">Configuraciones</a>
+                <a class="nav-item nav-link active" href="<?php echo $url_base;?>secciones/usuario" aria-current="page">Usuarios</a>
  
             </div>
     
