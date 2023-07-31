@@ -1,3 +1,4 @@
+<?php $url_base="https://amateos.tible.tech/proyectoyoutube/admin/"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +15,8 @@
 
             <div class="nav navbar-nav">
 
-                <a class="nav-item nav-link active" href="#" aria-current="page">Administrador</a>
-                <a class="nav-item nav-link active" href="#" aria-current="page">Servicios</a>
+                <a class="nav-item nav-link active" href="" aria-current="page">Administrador</a>
+                <a class="nav-item nav-link active" href="<?php echo $url_base;?>secciones/servicios" aria-current="page">Servicios</a>
                 <a class="nav-item nav-link active" href="#" aria-current="page">Portafolio</a>
                 <a class="nav-item nav-link active" href="#" aria-current="page">Entradas</a>
                 <a class="nav-item nav-link active" href="#" aria-current="page">Equipo</a>

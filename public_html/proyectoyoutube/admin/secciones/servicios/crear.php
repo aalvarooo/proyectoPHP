@@ -1,7 +1,7 @@
 <?php 
-include("../templates/header.php");
+include("../../templates/header.php");
 ?> 
 Listar Servicios
 <?php 
-include("../templates/footer.php");
+include("../../templates/footer.php");
 ?> 
