@@ -1,22 +1,3 @@
-<?php
-include(__DIR__."/db.php");
-
-
-if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["nombre"]) && !empty ($_POST["email"]) && !empty($_POST["telefono"])&& !empty($_POST["contrasena"])){
-    $sentencia = $mysqli->prepare("INSERT INTO `usuarios1` (`nombre`, `correo`, `telefono`, `contrasena`) VALUES (?, ?, ?, ?)");
-    $sentencia->bind_param("ssis", $_POST["nombre"], $_POST["email"], $_POST["telefono"], $_POST["contrasena"]);
-    $sentencia->execute();
-    $sentencia->insert_id;
-
-    if (!empty($sentencia->insert_id)) {
-        if (loginUser($sentencia->insert_id)) {
-            header("Location: index.php");
-            die();
-        }
-    }
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +6,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["nombre"]) && !empty ($
     <title>registro</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
+<?php
+if(!empty($_POST["nombre"]) && !empty($_POST["email"]) && !empty($_POST["telefono"]) && !empty($_POST["contrasena"])){
+    $mysqli = $mysqli->prepare("INSERT INTO `usuarios1` (nombre, correo, telefono, contrasena) VALUES (?, ?, ?)");
+    $mysqli->bind_param("ssis", $nombre, $correo, $telefono, $contrasena);
+    $mysqli->execute();
+    $mysqli->insert_id;
+}
+?>
+
 <body class="bg-primary d-flex justify-content-center align-items-cente align-items-center vh-100">
     <div class="container justify-content-center p-5 bg-white rounded-5 w-75">
         <div class="d-flex justify-content-center fs-1">
