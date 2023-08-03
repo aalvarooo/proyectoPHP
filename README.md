@@ -14,7 +14,6 @@
  - [x]: Cambiar nombre de tabla
  - [ ]: Login y registro no son accesibles si estás logeado
  - [ ]: Si estás logeado en la cabecera de la página (arriba a la derecha) debe aparecer un icono de usuario con tu nombre
- - [ ]: Añadir Font Awesome para los iconos de la página
  - [ ]: Al hacer click en el icono de perfil vas a una página en la que puedes ver tus datos (explicarme correctamente esto)
  - [ ]: En la página de códigos debes de poder borrar códigos
  - [ ]: Header/Footer únicos para todas las páginas (un fichero para todas las páginas)
@@ -23,3 +22,7 @@
  - [ ]: Permitir cerrar sessión
  - [ ]: Menu con cabecera (titulito de la pagina) y navegación para las paginas que tenemos
  - [ ]: Añadir una nueva página en la que poder ver el top de usuarios que más códigos registrados tienen. Deberá estar ordenado de más a menos, y mostrar los 10 primeros con su nombre y conteo
+
+
+
+  - [ ]: Añadir Font Awesome para los iconos de la página  -----------creo que lo tengo ya-----------

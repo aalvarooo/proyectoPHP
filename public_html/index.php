@@ -1,6 +1,7 @@
 <?php
-include(__DIR__ . "/templates/header.php");
- 
+include(__DIR__ . "/db.php");
+require_once(__DIR__ . "/templates/header.php");
+
 if (!isset($_SESSION["logedin"]) || $_SESSION["logedin"] !== true) {
     header("Location: login.php");
     die();
@@ -46,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["codigo"]) && !empty($_
 }
 } 
 ?>
-<body class="bg-primary d-flex justify-content-center align-items-cente align-items-center vh-100">
+<div class="bg-primary d-flex justify-content-center align-items-cente align-items-center vh-100">
     <div class="container justify-content-center p-5 bg-white rounded-5 w-75 m-5">
         <h2 class="text-center p-5 text-dark fw-bold fs-2 "> Bienvenido al sorteo <?= $userData["nombre"] ?>  
         </h2>
@@ -59,6 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["codigo"]) && !empty($_
             </div>
         </form>
     </div>
+</div>
+<?php require_once(__DIR__ . "/templates/footer.php"); ?>
 
-<?php include(__DIR__ . "/templates/footer.php");
-?>
