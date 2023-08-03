@@ -14,7 +14,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 $stmt->close();
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +35,7 @@ $stmt->close();
         <?php
             endwhile;
         endif;
+
         ?>
 </body>
 
