@@ -2,6 +2,9 @@
 
 require_once(__DIR__ . "/db.php");
 require_once(__DIR__ . "/templates/header.php");
+ if ($_SESSION["logedin"] === true): 
+header("Location: index.php");
+endif; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     

@@ -25,4 +25,6 @@
 
 
 
-  - [ ]: Añadir Font Awesome para los iconos de la página  -----------creo que lo tengo ya-----------
+  - [x]: Añadir Font Awesome para los iconos de la página  -----------creo que lo tengo ya-----------
+   -[x]: Login y registro no son accesibles si estás logeado
+

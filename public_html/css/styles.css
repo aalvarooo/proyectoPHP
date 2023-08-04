@@ -4,7 +4,7 @@ a {
 }
 
 p {
-    font-size: 17px;
+    font-size: 7px;
 }
 
 a:hover{
@@ -12,4 +12,7 @@ a:hover{
 }
 i {
     font-size: 25px;
+}
+svg {
+    color: #0D6EFD;
 }
