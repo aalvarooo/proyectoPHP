@@ -8,7 +8,7 @@ session_start(); // Inicia la sesión, necesaria para mantener el estado de inic
 
 ini_set('display_errors', 1); 
 ini_set('display_startup_errors', 1); 
-error_reporting(E_ALL);
+error_reporting(E_ALL ^E_NOTICE ^E_WARNING);
 
 // Base de datos
 define('DB_HOST', 'localhost');
@@ -85,6 +85,11 @@ function insertarCodigo($codigo, $usuario) {
     $stmt->close();
     return !empty($stmt->insert_id);
 }
+ 
+if (!empty($_GET["logout"])){
+    session_destroy();
+    header("Location: login.php");
+} 
 
 
 

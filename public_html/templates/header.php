@@ -7,99 +7,62 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles2.css">
 
     <!-- Bootstrap CSS -->
 
 </head>
 
-<body class="bg-secondary">
+<body class="">
 
     <!-- Inicio del menu -->
+    <!-- 
+    1. Al hacer Click al botón hay que hacer una petición para recibir con PHP para el cierre de sesion
+    -->
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <!-- icono o nombre -->
-
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-flower1"></i>
-                <span class="text-warning">Intelio</span>
-            </a>
-
-            <!-- boton del menu -->
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#"><i class="fa-brands fa-suse"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- elementos del menu colapsable -->
-
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav me-auto">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Precios</a>
+                        <a class="nav-link" href="datos-personales.php">Datos personales</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Servicios
-                        </a>
-
-                        <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Renta</a></li>
-                            <li><a class="dropdown-item" href="#">Equipos</a>
-                            <li>
-                            <li><a class="dropdown-item" href="#">Networking</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listado-top10.php">Más premiados</a>
                     </li>
+                    <?php
+                    if ($_SESSION["logedin"] === true) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.php?logout=true" tabindex="-1" aria-disabled="true">cerrar sesión</a>
+                        </li>
+                    <?php } ?>
                 </ul>
+                <form class="d-flex">
+                    <?php
 
-                <hr class="d-md-none text-white-50">
+                    if ($_SESSION["logedin"] === true) :
+                        $userData = $_SESSION["user_data"];
+                    ?>
 
-                <!-- enlaces redes sociales -->
 
-                <ul class="navbar-nav  flex-row flex-wrap text-light">
+                        <div class=" pt-3 flex-column  text-center me-3">
+                            <a href="../datos-personales.php">
+                                <svg class="mb-2 me-4 fs-3" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                                </svg>
+                            </a>
+                            <p class="text-info text-uppercase text-center me-4 fs-5"><?= $userData["nombre"] ?></p>
+                        </div>
 
-                    <li class="nav-item col-6 col-md-auto p-3">
-                        <i class="fa-brands fa-twitter"></i>
-                        <small class="d-md-none ms-2">Twitter</small>
-                    </li>
-
-                    <li class="nav-item col-6 col-md-auto p-3">
-                        <i class="fa-brands fa-facebook"></i>
-                        <small class="d-md-none ms-2">GitHub</small>
-                    </li>
-
-                    <li class="nav-item col-6 col-md-auto p-3">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <small class="d-md-none ms-2">WhatsApp</small>
-                    </li>
-
-                    <li class="nav-item col-6 col-md-auto p-3">
-                        <i class="fa-brands fa-facebook"></i>
-                        <small class="d-md-none ms-2">Facebook</small>
-                    </li>
-
-                </ul>
-
-                <!--boton Informacion -->
-
-                <?php 
-                 $userData = $_SESSION["user_data"];
-                if ($_SESSION["logedin"] === true) : ?>
-                   
-
-                    <div class="ms-4 me-4 fs-5 text-info">
-                             <svg  xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
-                            </svg>
-                            <p><?=$userData["nombre"] ?></p>
-                     </div>
-
-                <?php endif; ?>
+                    <?php endif; ?>
+                </form>
             </div>
-
         </div>
     </nav>

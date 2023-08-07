@@ -1,6 +1,6 @@
 <?php
 include(__DIR__ . "/db.php");
-require_once(__DIR__ . "/templates/header.php");
+include(__DIR__ . "/templates/header.php");
 
 if (!isset($_SESSION["logedin"]) || $_SESSION["logedin"] !== true) {
     header("Location: login.php");
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["codigo"]) && !empty($_
             <input type="text" class="form-control" name="codigo">
             <div class="d-flex justify-content-end gap-3">
                 <button type="submit" class="btn btn-primary">guardar código</button>
-                <a href="listado.php" class="btn btn-primary">Ver todos los códigos</a>
+                <a href="datos-personales.php" class="btn btn-primary">Ver todos los códigos</a>
             </div>
         </form>
     </div>

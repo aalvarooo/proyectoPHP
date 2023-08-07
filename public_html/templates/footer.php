@@ -4,48 +4,15 @@
         <div class="container text-center text-md-start">
             <div class="row text-center text-md-start">
 
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <div class="col 12 col-md-6  mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 font-weight-bold">Nosotros</h5>
                     <hr class="mb-4">
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis veniam, amet quo aliquid maiores, est sequi officiis, tempora totam commodi consectetur itaque exercitationem vel! Odio aliquid dolor at est facere!
                     </p>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Dejanos ayudarte</h5>
-                    <hr class="mb-4">
-                    <p>
-                        <a href="#" class="text-dark">Tu correo</a> 
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark">Tus órdenes</a> 
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark">Manejo de cuenta</a> 
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark">Ayuda</a> 
-                    </p>
-
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Haz dinero</h5>
-                    <hr class="mb-4">
-                    <p>
-                        <a href="#" class="text-dark">Vende productos en nuestro sitio</a> 
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark">Anuncios</a> 
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark">Afiliate</a> 
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark">pública</a> 
-                    </p>
-
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        
+                <div class="col 12 col-md-6">
                     <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Contacto</h5>
                     <hr class="mb-4">
                     <p>
